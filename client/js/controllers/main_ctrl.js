@@ -1,16 +1,16 @@
-travApp.controller('MainController', function (UserFactory, $scope, $timeout, QueueService, $http, auth, store, $location) {
+travApp.controller('MainController', function (MainFactory, $scope, $timeout, $http, auth, store, $location) {
 	console.log("MainController Loaded");
 	var that = this;
 
 	$scope.auth = auth;
 
-	var INTERVAL = 10000,
+	var INTERVAL = 8550,
 		slides = [
 			{id:"image00", src:"/img/famvacation.jpg", title: 'We need', subtitle: 'time together!'},
 			{id:"image01", src:"/img/vacation_house.jpg", title: 'To', subtitle: 'become reinvigorated!'},
 			{id:"image02", src:"/img/winter.jpg", title: 'Warm', subtitle: 'our hearts!'},
 			{id:"image03", src:"/img/pyramids.jpg", title: 'Exploring', subtitle: 'new horizions!'},
-			{id:"image04", src:"/img/companions-white 2.png", title: 'Allow ', subtitle: 'me to help!'}
+			{id:"image04", src:"/img/roadtrip.jpg", title: 'Allow ', subtitle: 'me to help!'}
 		];
 
 		function setCurrentSlideIndex(index) {
@@ -22,7 +22,7 @@ travApp.controller('MainController', function (UserFactory, $scope, $timeout, Qu
 		}
 
 		function nextSlide() {
-				$scope.currentIndex = ($scope.currentIndex < $scope.slides.length - 1) ? ++$scope.currentIndex : 0;
+				$scope.currentIndex = ($scope.currentIndex < $scope.slides.length - 1.5) ? ++$scope.currentIndex : 0;
 				$timeout(nextSlide, INTERVAL);
 		}
 
@@ -38,7 +38,7 @@ travApp.controller('MainController', function (UserFactory, $scope, $timeout, Qu
 		loadSlides();
 
 
-		$scope.login = function () {
+		that.login = function () {
     		auth.signin({}, function (profile, token) {
 		      // Success callback
 		      store.set('profile', profile);
@@ -49,15 +49,16 @@ travApp.controller('MainController', function (UserFactory, $scope, $timeout, Qu
 		    });
 	  	}
 
-	  	$scope.logout = function() {
+	  	that.logout = function() {
 			auth.signout();
 			store.remove('profile');
 			store.remove('token');
+			$location.path('/login');
 		}
 
 });
 
-app.animation('.slide-animation', function ($window) {
+travApp.animation('.slide-animation', function ($window) {
 	return {
 		enter: function (element, done) {
 			var startPoint = $window.innerWidth * 0.5,
