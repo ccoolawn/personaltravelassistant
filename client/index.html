@@ -47,21 +47,21 @@
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#">
-					<img alt="Brand" src="/assets/img/beacon2-sm.png">
+					<img alt="Brand" src="/img/companions-white.png">
 				</a>
 			</div>
 			<div>
 				<ul class="nav navbar-nav pull-left">
-					<li ng-if="auth.isAuthenticated"><a href="#/">Home</a></li>
-					<li ng-if="auth.isAuthenticated"><a href="#/accomodations">Accomodations</a></li>
-					<li ng-if="auth.isAuthenticated"><a href="#/sites">Things To See</a></li>
-					<li ng-if="auth.isAuthenticated"><a href="#/Food">Food</a></li>
+					<li ng-if="auth.isAuthenticated"><a href="/">Home</a></li>
+					<li ng-if="auth.isAuthenticated"><a href="/accomodations">Accomodations</a></li>
+					<li ng-if="auth.isAuthenticated"><a href="/sites">Things To See</a></li>
+					<li ng-if="auth.isAuthenticated"><a href="/Food">Food</a></li>
 				</ul>
 				<ul class="nav navbar-nav pull-right">
 					<li ng-if="auth.isAuthenticated"><img style="height: 60px" src="{{auth.profile.picture}}" alt=""></li>
 					<li ng-if="auth.isAuthenticated"><h4 style="margin-left: 10px">{{auth.profile.nickname}} </h3></li>
-					<li ng-if="!auth.isAuthenticated"><a href="#/login" ng-click="login()"><span class="glyphicon glyphicon-log-in"> Login / <span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li ng-if="auth.isAuthenticated"><a href="#/logout" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+					<li ng-if="!auth.isAuthenticated"><a href="/login" ng-click="login()"><span class="glyphicon glyphicon-log-in"> Login / <span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li ng-if="auth.isAuthenticated"><a href="/logout" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 				</ul>
 			</div>
 		</div>

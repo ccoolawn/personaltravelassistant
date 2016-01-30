@@ -53,7 +53,7 @@ var travApp = angular.module('docApp', ['ngRoute', 'ngAnimate', 'bgImage', 'auth
 	// .otherwise('/')
 
 	authProvider.init({
-		domain: 'cornellcoulon.auth0.com',
+		dousers: 'cornellcoulon.auth0.com',
 		clientID: 'CNRkDXoKI4DQTI748vMTsHqZBTmUHXur',
 		callbackURL: location.href,
 		// URL to redirect to if the user tries to access a resource when not authenticated.
