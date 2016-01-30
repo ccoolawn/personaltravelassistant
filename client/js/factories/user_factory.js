@@ -1,4 +1,4 @@
-app.factory('UserFactory', function($http, $location){
+travApp.factory('UserFactory', function($http, $location){
 	var obj = {};
 
 	return {

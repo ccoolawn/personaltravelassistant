@@ -1,4 +1,4 @@
-app.controller('UsersController', function(UserFactory, $location, $scope, auth){
+travApp.controller('UsersController', function(UserFactory, $location, $scope, auth){
 	console.log("UsersController Loaded");
 	var that = this;
 

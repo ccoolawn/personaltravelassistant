@@ -1,6 +1,6 @@
-var app = angular.module('app', ['ngRoute', 'ngAnimate', 'bgImage', 'auth0', 'angular-storage', 'angular-jwt']);
+var travApp = angular.module('travApp', ['ngRoute', 'ngAnimate', 'bgImage', 'auth0', 'angular-storage', 'angular-jwt']);
 
-app.config(function (authProvider, $routeProvider, $locationProvider, $httpProvider, jwtInterceptorProvider) {
+travApp.config(function (authProvider, $routeProvider, $locationProvider, $httpProvider, jwtInterceptorProvider) {
 
 	jwtInterceptorProvider.tokenGetter = ['store', function(store) {
 		// Return the saved token
@@ -53,7 +53,7 @@ app.config(function (authProvider, $routeProvider, $locationProvider, $httpProvi
 	// .otherwise('/')
 
 	authProvider.init({
-		dousers: 'cornellcoulon.auth0.com',
+		domain: 'cornellcoulon.auth0.com',
 		clientID: 'CNRkDXoKI4DQTI748vMTsHqZBTmUHXur',
 		callbackURL: location.href,
 		// URL to redirect to if the user tries to access a resource when not authenticated.

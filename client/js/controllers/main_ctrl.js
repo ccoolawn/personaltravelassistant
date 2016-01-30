@@ -1,4 +1,4 @@
-app.controller('MainController', function (UserFactory, $scope, $timeout, QueueService, $http, auth, store, $location) {
+travApp.controller('MainController', function (UserFactory, $scope, $timeout, QueueService, $http, auth, store, $location) {
 	console.log("MainController Loaded");
 	var that = this;
 
