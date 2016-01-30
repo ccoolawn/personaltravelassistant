@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="travApp">
+<html ng-app="app">
 <head>
 	<meta charset="UTF-8">
 	<title>The Travel Companion</title>
@@ -10,7 +10,8 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-animate.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.js"></script>
-	<script type="text/javascript" src="/js/local/animation.js"></script>
+	<script type="text/javascript" src="/js/local/bgImage.js"></script>
+	<!-- // <script type="text/javascript" src="/js/local/animation.js"></script> -->
 	<script type="text/javascript" src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
 
 	<!-- CSS -->
@@ -38,15 +39,15 @@
 	<script src="js/app.js"></script>
 	<script src="js/factories/user_factory.js"></script>
 	<script src="js/controllers/users_controller.js"></script>
-	<script src="js/ui-bootstrap-custom-0.13.4.min.js"></script>
-	<script src="js/ui-bootstrap-custom-tpls-0.13.4.min.js"></script>
+	<script src="js/local/ui-bootstrap-custom-0.13.4.min.js"></script>
+	<script src="js/local/ui-bootstrap-custom-tpls-0.13.4.min.js"></script>
 </head>
 <body ng-controller="UsersController as trip">
 	<!-- Fixed navbar -->
 	<nav class="navbar navbar-inverse navbar-fixed-top opaque-navbar">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">
+				<a class="navbar-brand" href="/">
 					<img alt="Brand" src="/img/companions-white.png">
 				</a>
 			</div>
@@ -60,8 +61,8 @@
 				<ul class="nav navbar-nav pull-right">
 					<li ng-if="auth.isAuthenticated"><img style="height: 60px" src="{{auth.profile.picture}}" alt=""></li>
 					<li ng-if="auth.isAuthenticated"><h4 style="margin-left: 10px">{{auth.profile.nickname}} </h3></li>
-					<li ng-if="!auth.isAuthenticated"><a href="/login" ng-click="login()"><span class="glyphicon glyphicon-log-in"> Login / <span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li ng-if="auth.isAuthenticated"><a href="/logout" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+					<li ng-if="!auth.isAuthenticated"><a href="#/login" ng-click="login()"><span class="glyphicon glyphicon-log-in"> Login / <span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li ng-if="auth.isAuthenticated"><a href="#/logout" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 				</ul>
 			</div>
 		</div>

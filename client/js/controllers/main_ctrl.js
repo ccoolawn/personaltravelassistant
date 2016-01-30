@@ -6,11 +6,11 @@ app.controller('MainController', function (UserFactory, $scope, $timeout, QueueS
 
 	var INTERVAL = 10000,
 		slides = [
-			{id:"image00", src:"assets/img/teens-walking.jpg", title: 'Our teens', subtitle: 'are side tracked!'},
-			{id:"image01", src:"assets/img/carbroken.jpg", title: 'Our lives', subtitle: 'have unexpected circumstances!'},
-			{id:"image02", src:"assets/img/latemeeting.jpg", title: 'Our meetings', subtitle: 'can run late!'},
-			{id:"image03", src:"assets/img/sickchild.jpg", title: 'Our loved ones', subtitle: 'need us!'},
-			{id:"image04", src:"assets/img/beacon3-horizontal.png", title: 'Finally', subtitle: 'a solution!'}
+			{id:"image00", src:"/img/famvacation.jpg", title: 'We need', subtitle: 'time together!'},
+			{id:"image01", src:"/img/vacation_house.jpg", title: 'To', subtitle: 'become reinvigorated!'},
+			{id:"image02", src:"/img/winter.jpg", title: 'Warm', subtitle: 'our hearts!'},
+			{id:"image03", src:"/img/pyramids.jpg", title: 'Exploring', subtitle: 'new horizions!'},
+			{id:"image04", src:"/img/companions-white 2.png", title: 'Allow ', subtitle: 'me to help!'}
 		];
 
 		function setCurrentSlideIndex(index) {
@@ -38,50 +38,12 @@ app.controller('MainController', function (UserFactory, $scope, $timeout, QueueS
 		loadSlides();
 
 
-		// PubNub.init({
-		// 	publish_key: 'pub-c-a3c419a4-8b0e-4563-8439-8feb7493d89b',
-		// 	subscribe_key: 'sub-c-f5beb90e-7e7d-11e5-ad8e-02ee2ddab7fe',
-		// 	uuid:'an_optional_user_uuid'
-		// })
-
-		/* ---------------------------------------------------------------------------
-		Publish Messages
-		--------------------------------------------------------------------------- */
-
-		// $scope.publish = function() {
-		// 	PubNub.ngPublish({
-		// 		channel: $scope.selectedChannel,
-		// 		message: $scope.newMessage
-		// 	});
-		// };
-
-		/* ---------------------------------------------------------------------------
-		Listen for Messages
-		--------------------------------------------------------------------------- */
-
-		 // $scope.subscribe = function() {
-
-			// PubNub.ngSubscribe({
-			// channel: theChannel,
-			// callback: function() { console.log(arguments); }
-			// })
-
-			// $rootScope.$on(PubNub.ngMsgEv( theChannel ), function(event, payload) {
-			// 	console.log('got a message event:', payload);
-			// })
-
-			// $rootScope.$on(PubNub.ngPrsEv(theChannel), function(event, payload) {
-			// 	// payload contains message, channel, env...
-			// 	console.log('got a presence event:', payload);
-			// })
-		 // }
-
 		$scope.login = function () {
     		auth.signin({}, function (profile, token) {
 		      // Success callback
 		      store.set('profile', profile);
 		      store.set('token', token);
-		      $location.path('/beacons');
+		      $location.path('/main');
 		    }, function () {
 		      // Error callback
 		    });

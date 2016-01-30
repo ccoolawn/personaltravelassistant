@@ -1,6 +1,6 @@
-var travApp = angular.module('docApp', ['ngRoute', 'ngAnimate', 'bgImage', 'auth0', 'angular-storage', 'angular-jwt']);
+var app = angular.module('app', ['ngRoute', 'ngAnimate', 'bgImage', 'auth0', 'angular-storage', 'angular-jwt']);
 
-.config(function (authProvider, $routeProvider, $locationProvider, $httpProvider, jwtInterceptorProvider) {
+app.config(function (authProvider, $routeProvider, $locationProvider, $httpProvider, jwtInterceptorProvider) {
 
 	jwtInterceptorProvider.tokenGetter = ['store', function(store) {
 		// Return the saved token

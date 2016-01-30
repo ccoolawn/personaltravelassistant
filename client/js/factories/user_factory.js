@@ -1,4 +1,4 @@
-travApp.factory('UserFactory', function($http, $location){
+app.factory('UserFactory', function($http, $location){
 	var obj = {};
 
 	return {
@@ -31,7 +31,7 @@ travApp.factory('UserFactory', function($http, $location){
 			})
 		},
 		update: function(user){
-			console.log("userFactory remove ", user;
+			console.log("userFactory remove ", user);
 			$http.put('/users/'+user._id, user).success(function(response){
 				$location.path('/users');
 			})
