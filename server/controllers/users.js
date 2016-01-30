@@ -75,7 +75,9 @@ module.exports = (function() {
 					response.json({status:true});
 				}
 			})
+
 		}, 
+
 		fetch: function(request, response){
 			console.log("Server / Ctrl/ Users - Fetch 4");
 			var place = {};
@@ -102,6 +104,7 @@ module.exports = (function() {
 
 
 				function travelGet (data, callback){
+
 					travel.get('http://api.openweathermap.org/data/2.5/weather?q=' + data + '&units=imperial&APPID=9491e0f2bd9ec591e2f391ec993acaf8',function(error, res){
 						if (error)
 							console.log(error);
