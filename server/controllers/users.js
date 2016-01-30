@@ -1,5 +1,5 @@
 var User = mongoose.model('User');
-//var travel = require('request'); 
+var travel = require('request'); 
 var http = require('http');
 
 module.exports = (function() {
