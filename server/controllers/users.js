@@ -1,5 +1,6 @@
 var User = mongoose.model('User');
-var travel = require('request');
+var travel = require('request'); 
+var http = require('http');
 
 module.exports = (function() {
 	return {
@@ -74,6 +75,44 @@ module.exports = (function() {
 					response.json({status:true});
 				}
 			})
-		}
-	}
-})();
+		}, 
+		fetch: function(request, response){
+			console.log("Server / Ctrl/ Users - Fetch 4");
+			var place = {};
+			var that = this;
+				that.result1 = request.body.city;
+				that.options1 = null;
+				that.details1 = '';
+				that.weather = '';
+				that.recipies = '';
+				// console.log(that.options1);
+				// console.log(that.details1);
+			var pendingTask;
+				if (that.result1 === undefined) {
+					that.result1 = "";
+				}
+				that.change = function() {
+					if (pendingTask) {
+						clearTimeout(pendingTask);
+					}
+					pendingTask = setTimeout(fetch, 800);
+				};
+				console.log(that.result1);
+
+
+
+				function travelGet (data, callback){
+				travel.get('http://api.openweathermap.org/data/2.5/weather?q=' + data + '&units=imperial&APPID=9491e0f2bd9ec591e2f391ec993acaf8',function(error, res){
+					if (error)
+						console.log(error);
+					else {;
+						callback(res.body);
+					}
+				});
+			}
+
+			travelGet(that.result1, function(q){
+				response.json(q);
+			});
+
+	
