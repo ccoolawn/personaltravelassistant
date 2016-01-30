@@ -75,7 +75,8 @@ module.exports = (function() {
 					response.json({status:true});
 				}
 			})
-		}, 
+		}
+
 		fetch: function(request, response){
 			console.log("Server / Ctrl/ Users - Fetch 4");
 			var place = {};
@@ -108,11 +109,15 @@ module.exports = (function() {
 					else {;
 						callback(res.body);
 					}
-				});
+				})
 			}
 
 			travelGet(that.result1, function(q){
 				response.json(q);
 			});
+
+		}
+
+
 
 	
