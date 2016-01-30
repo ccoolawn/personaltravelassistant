@@ -1,4 +1,5 @@
 var User = mongoose.model('User');
+var travel = require('request');
 
 module.exports = (function() {
 	return {

@@ -1,5 +1,5 @@
 {
-	"name": "travel_assistant",
+	"name": "personaltravelassistant",
 	"version": "1.0.0",
 	"description": "travel app",
 	"main": "server.js",
