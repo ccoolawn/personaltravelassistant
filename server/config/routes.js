@@ -1,10 +1,10 @@
 module.exports = function(app) {
-  	var users = require('../controllers/users.js');
+		var users = require('../controllers/users.js');
 
-  	app
+	app
 
 	// - - - User - - -
-    // Index
+	// Index
 	.get('/users', function(request, response) { users.index(request, response) })
 	// New
 	.get('/users/new', function(request, response) { users.create(request, response) })
