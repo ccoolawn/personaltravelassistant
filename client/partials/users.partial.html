@@ -1,0 +1,7 @@
+<h1>Users Partial</h1>
+<input ng-model="usersCtrl.newUser.first_name" require>
+<button ng-click="usersCtrl.add(usersCtrl.newUser)">Add User</button>
+<li ng-repeat="user in usersCtrl.users">
+	<span ng-bind="user.first_name" ng-click="usersCtrl.show(user)"></span>
+	<button ng-click="usersCtrl.remove(user)">Remove User</button>
+</li>
