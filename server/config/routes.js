@@ -1,6 +1,8 @@
 module.exports = function(app) {
   	var users = require('../controllers/users.js');
 
+  	app
+
 	// - - - User - - -
     // Index
 	.get('/users', function(request, response) { users.index(request, response) })
