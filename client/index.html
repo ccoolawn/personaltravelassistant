@@ -10,12 +10,17 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-animate.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/js/local/bgImage.js"></script>
 	<script type="text/javascript" src="/js/local/animation.js"></script>
+	<script type="text/javascript" src="/js/local/ui-bootstrap.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+	<script src="/bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>
 	<script src="https://code.createjs.com/preloadjs-0.6.1.min.js"></script>
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/bower_components/angular-google-places-autocomplete/src/autocomplete.css">
 	<link href="css/customstyle.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
@@ -56,16 +61,16 @@
 			</div>
 			<div>
 				<ul class="nav navbar-nav pull-left">
-					<li ng-if="auth.isAuthenticated"><a href="/">Home</a></li>
-					<li ng-if="auth.isAuthenticated"><a href="/accomodations">Accomodations</a></li>
-					<li ng-if="auth.isAuthenticated"><a href="/sites">Things To See</a></li>
-					<li ng-if="auth.isAuthenticated"><a href="/Food">Food</a></li>
+					<li ng-if="auth.isAuthenticated"><a href="#/">Home</a></li>
+					<li ng-if="auth.isAuthenticated"><a href="#/accomodations">Accomodations</a></li>
+					<li ng-if="auth.isAuthenticated"><a href="#/sites">Things To See</a></li>
+					<li ng-if="auth.isAuthenticated"><a href="#/Food">Food</a></li>
 				</ul>
 				<ul class="nav navbar-nav pull-right">
 					<li ng-if="auth.isAuthenticated"><img style="height: 60px" src="{{auth.profile.picture}}" alt=""></li>
 					<li ng-if="auth.isAuthenticated"><h4 style="margin-left: 10px">{{auth.profile.nickname}} </h3></li>
-					<li ng-if="!auth.isAuthenticated"><a href="/login" ng-click="login()"><span class="glyphicon glyphicon-log-in"> Login / <span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li ng-if="auth.isAuthenticated"><a href="/logout" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+					<li ng-if="!auth.isAuthenticated"><a href="#/login" ng-click="login()"><span class="glyphicon glyphicon-log-in"> Login / <span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li ng-if="auth.isAuthenticated"><a href="#/logout" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 				</ul>
 			</div>
 		</div>

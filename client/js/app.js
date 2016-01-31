@@ -1,4 +1,4 @@
-var travApp = angular.module('travApp', ['ngRoute', 'ngAnimate', 'bgImage', 'auth0', 'angular-storage', 'angular-jwt']);
+var travApp = angular.module('travApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'bgImage', 'google.places', 'auth0', 'angular-storage', 'angular-jwt']);
 
 travApp.config(function (authProvider, $routeProvider, $locationProvider, $httpProvider, jwtInterceptorProvider) {
 
@@ -32,10 +32,10 @@ travApp.config(function (authProvider, $routeProvider, $locationProvider, $httpP
 		templateUrl: '/',
 		requiresLogin: true
 	})
-	.when('/beacons', {
-		controller: 'BeaconsController',
-		controllerAs: 'beacons_ctrl',
-		templateUrl: '/partials/myBeacons.html',
+	.when('/main', {
+		controller: 'UsersController',
+		controllerAs: 'users_ctrl',
+		templateUrl: '/partials/main.html',
 		requiresLogin: true
 	})
 	.when('/journeys', {

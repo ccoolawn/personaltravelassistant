@@ -2,7 +2,7 @@ travApp.controller('MainController', function (MainFactory, $scope, $timeout, $h
 	console.log("MainController Loaded");
 	var that = this;
 
-	$scope.auth = auth;
+	// $scope.auth = auth;
 
 	var INTERVAL = 8550,
 		slides = [
@@ -38,7 +38,7 @@ travApp.controller('MainController', function (MainFactory, $scope, $timeout, $h
 		loadSlides();
 
 
-		that.login = function () {
+		$scope.login = function () {
     		auth.signin({}, function (profile, token) {
 		      // Success callback
 		      store.set('profile', profile);
@@ -49,7 +49,7 @@ travApp.controller('MainController', function (MainFactory, $scope, $timeout, $h
 		    });
 	  	}
 
-	  	that.logout = function() {
+	  	$scope.logout = function() {
 			auth.signout();
 			store.remove('profile');
 			store.remove('token');
