@@ -4,32 +4,21 @@
 		<div class="jumbotron">
 			<form role= "form" >
 				<div class="form-group">
-					<p><h1>Where do you want to go?</h1></p>
-					<div class="col-md-6">
-						<p>
-							<input id="Autocomplete" type="text" class="form-control" g-places-autocomplete ng-model="myScopeVar" placeholder= "Starting city!" details="trip.details1" options="trip.options1">
-						</p>
-					</div>
-					<div class="col-md-3">
-						<p class="input-group">
-							<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-							<span class="input-group-btn">
-								<button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
-							</span>
-						</p>
-					</div>
-					<div class="col-md-6">
-						<p>
-							<input id="Autocomplete" type="text" class="form-control" g-places-autocomplete ng-model="myScopeVar" placeholder= "Destination city!"  details="trip.details2" options="trip.options1">
-						</p>
-					</div>
-					<div class="col-md-3">
-						<p class="input-group">
-							<input type="text" class="form-control" uib-datepicker-popup ng-model="dt" is-open="popup2.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-							<span class="input-group-btn">
-								<button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
-							</span>
-						</p>
+					<p><h2>Plan Your Trip</h2></p>
+					<div class="row">
+						<div class="col-md-6">
+							<p>
+								<input itype="text" class="form-control" g-places-autocomplete ng-model="myScopeVar" placeholder= "Starting city!" details="trip.details1" options="trip.options1">
+							</p>
+						</div>
+						<div class="col-md-3">
+							<p class="input-group">
+								<input type="text" class="form-control" datepicker-popup="yyyy/MM/dd" ng-model="dt" is-open="opened" close-text="Close"/>
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="openCalendar($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+								</span>
+							</p>
+						</div>
 					</div>
 					<a href="#/results" class="btn btn-default" ng-click="trip.fetch()" ng-enter="trip.myFunction()">Let's Go!</a>
 				</div>
